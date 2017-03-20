@@ -1,0 +1,2039 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+
+        href="https://github.com/mikaelbr/node-notifier#readme"
+
+    >node-notifier (v5.1.2)</a>
+</h1>
+<h4>A Node.js module for sending notifications on native Mac, Windows (post and pre 8) and Linux (or Growl as fallback)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier">module node-notifier</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Growl">
+            function <span class="apidocSignatureSpan">node-notifier.</span>Growl
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Notification">
+            function <span class="apidocSignatureSpan">node-notifier.</span>Notification
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.NotificationCenter">
+            function <span class="apidocSignatureSpan">node-notifier.</span>NotificationCenter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.NotifySend">
+            function <span class="apidocSignatureSpan">node-notifier.</span>NotifySend
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsBalloon">
+            function <span class="apidocSignatureSpan">node-notifier.</span>WindowsBalloon
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsToaster">
+            function <span class="apidocSignatureSpan">node-notifier.</span>WindowsToaster
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">node-notifier.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>Growl.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>Notification.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>NotificationCenter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>WindowsBalloon.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>WindowsToaster.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>domain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-notifier.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.Growl">module node-notifier.Growl</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Growl.Growl">
+            function <span class="apidocSignatureSpan">node-notifier.</span>Growl
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Growl.super_">
+            function <span class="apidocSignatureSpan">node-notifier.Growl.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.Growl.prototype">module node-notifier.Growl.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Growl.prototype.notify">
+            function <span class="apidocSignatureSpan">node-notifier.Growl.prototype.</span>notify
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.Notification">module node-notifier.Notification</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Notification.Notification">
+            function <span class="apidocSignatureSpan">node-notifier.</span>Notification
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Notification.super_">
+            function <span class="apidocSignatureSpan">node-notifier.Notification.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.Notification.prototype">module node-notifier.Notification.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.Notification.prototype.notify">
+            function <span class="apidocSignatureSpan">node-notifier.Notification.prototype.</span>notify
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.NotificationCenter">module node-notifier.NotificationCenter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.NotificationCenter.NotificationCenter">
+            function <span class="apidocSignatureSpan">node-notifier.</span>NotificationCenter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.NotificationCenter.super_">
+            function <span class="apidocSignatureSpan">node-notifier.NotificationCenter.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.NotificationCenter.prototype">module node-notifier.NotificationCenter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.NotificationCenter.prototype.notify">
+            function <span class="apidocSignatureSpan">node-notifier.NotificationCenter.prototype.</span>notify
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.WindowsBalloon">module node-notifier.WindowsBalloon</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsBalloon.WindowsBalloon">
+            function <span class="apidocSignatureSpan">node-notifier.</span>WindowsBalloon
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsBalloon.super_">
+            function <span class="apidocSignatureSpan">node-notifier.WindowsBalloon.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.WindowsBalloon.prototype">module node-notifier.WindowsBalloon.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsBalloon.prototype.notify">
+            function <span class="apidocSignatureSpan">node-notifier.WindowsBalloon.prototype.</span>notify
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.WindowsToaster">module node-notifier.WindowsToaster</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsToaster.WindowsToaster">
+            function <span class="apidocSignatureSpan">node-notifier.</span>WindowsToaster
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsToaster.super_">
+            function <span class="apidocSignatureSpan">node-notifier.WindowsToaster.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.WindowsToaster.prototype">module node-notifier.WindowsToaster.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.WindowsToaster.prototype.notify">
+            function <span class="apidocSignatureSpan">node-notifier.WindowsToaster.prototype.</span>notify
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-notifier.utils">module node-notifier.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.actionJackerDecorator">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>actionJackerDecorator
+            <span class="apidocSignatureSpan">(emitter, options, fn, mapper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.clone">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>clone
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.command">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>command
+            <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.constructArgumentList">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>constructArgumentList
+            <span class="apidocSignatureSpan">(options, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.fileCommand">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>fileCommand
+            <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.fileCommandJson">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>fileCommandJson
+            <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.immediateFileCommand">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>immediateFileCommand
+            <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.isLessThanWin8">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>isLessThanWin8
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.isMac">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>isMac
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.isMountainLion">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>isMountainLion
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.isWin8">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>isWin8
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.mapToGrowl">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToGrowl
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.mapToMac">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToMac
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.mapToNotifu">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToNotifu
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.mapToNotifySend">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToNotifySend
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-notifier.utils.mapToWin8">
+            function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToWin8
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier" id="apidoc.module.node-notifier">module node-notifier</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Growl" id="apidoc.element.node-notifier.Growl">
+        function <span class="apidocSignatureSpan">node-notifier.</span>Growl
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Growl(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof Growl)) {
+    return new Growl(options);
+  }
+
+  growly.appname = options.name || &#x27;Node&#x27;;
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.NotificationCenter(options).notify();
+new nn.NotifySend(options).notify();
+new nn.WindowsToaster(options).notify(options);
+new nn.WindowsBalloon(options).notify(options);
+new nn.<span class="apidocCodeKeywordSpan">Growl</span>(options).notify(options);
+```
+
+## Contents
+
+* [Notification Center documentation](#usage-notificationcenter)
+* [Windows Toaster documentation](#usage-windowstoaster)
+* [Windows Balloon documentation](#usage-windowsballoon)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Notification" id="apidoc.element.node-notifier.Notification">
+        function <span class="apidocSignatureSpan">node-notifier.</span>Notification
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotifySend(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof NotifySend)) {
+    return new NotifySend(options);
+  }
+
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.NotificationCenter" id="apidoc.element.node-notifier.NotificationCenter">
+        function <span class="apidocSignatureSpan">node-notifier.</span>NotificationCenter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotificationCenter(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof NotificationCenter)) {
+    return new NotificationCenter(options);
+  }
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Or if you are using several (or you are lazy):
+(note: technically, this takes longer to require)
+
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.<span class="apidocCodeKeywordSpan">NotificationCenter</span>(options).notify();
+new nn.NotifySend(options).notify();
+new nn.WindowsToaster(options).notify(options);
+new nn.WindowsBalloon(options).notify(options);
+new nn.Growl(options).notify(options);
+```
+
+## Contents
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.NotifySend" id="apidoc.element.node-notifier.NotifySend">
+        function <span class="apidocSignatureSpan">node-notifier.</span>NotifySend
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotifySend(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof NotifySend)) {
+    return new NotifySend(options);
+  }
+
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Or if you are using several (or you are lazy):
+(note: technically, this takes longer to require)
+
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.NotificationCenter(options).notify();
+new nn.<span class="apidocCodeKeywordSpan">NotifySend</span>(options).notify();
+new nn.WindowsToaster(options).notify(options);
+new nn.WindowsBalloon(options).notify(options);
+new nn.Growl(options).notify(options);
+```
+
+## Contents
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsBalloon" id="apidoc.element.node-notifier.WindowsBalloon">
+        function <span class="apidocSignatureSpan">node-notifier.</span>WindowsBalloon
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WindowsBalloon(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof WindowsBalloon)) {
+    return new WindowsBalloon(options);
+  }
+
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.NotificationCenter(options).notify();
+new nn.NotifySend(options).notify();
+new nn.WindowsToaster(options).notify(options);
+new nn.<span class="apidocCodeKeywordSpan">WindowsBalloon</span>(options).notify(options);
+new nn.Growl(options).notify(options);
+```
+
+## Contents
+
+* [Notification Center documentation](#usage-notificationcenter)
+* [Windows Toaster documentation](#usage-windowstoaster)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsToaster" id="apidoc.element.node-notifier.WindowsToaster">
+        function <span class="apidocSignatureSpan">node-notifier.</span>WindowsToaster
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WindowsToaster(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof WindowsToaster)) {
+    return new WindowsToaster(options);
+  }
+
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+(note: technically, this takes longer to require)
+
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.NotificationCenter(options).notify();
+new nn.NotifySend(options).notify();
+new nn.<span class="apidocCodeKeywordSpan">WindowsToaster</span>(options).notify(options);
+new nn.WindowsBalloon(options).notify(options);
+new nn.Growl(options).notify(options);
+```
+
+## Contents
+
+* [Notification Center documentation](#usage-notificationcenter)
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.Growl" id="apidoc.module.node-notifier.Growl">module node-notifier.Growl</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Growl.Growl" id="apidoc.element.node-notifier.Growl.Growl">
+        function <span class="apidocSignatureSpan">node-notifier.</span>Growl
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Growl(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof Growl)) {
+    return new Growl(options);
+  }
+
+  growly.appname = options.name || &#x27;Node&#x27;;
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.NotificationCenter(options).notify();
+new nn.NotifySend(options).notify();
+new nn.WindowsToaster(options).notify(options);
+new nn.WindowsBalloon(options).notify(options);
+new nn.<span class="apidocCodeKeywordSpan">Growl</span>(options).notify(options);
+```
+
+## Contents
+
+* [Notification Center documentation](#usage-notificationcenter)
+* [Windows Toaster documentation](#usage-windowstoaster)
+* [Windows Balloon documentation](#usage-windowsballoon)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Growl.super_" id="apidoc.element.node-notifier.Growl.super_">
+        function <span class="apidocSignatureSpan">node-notifier.Growl.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.Growl.prototype" id="apidoc.module.node-notifier.Growl.prototype">module node-notifier.Growl.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Growl.prototype.notify" id="apidoc.element.node-notifier.Growl.prototype.notify">
+        function <span class="apidocSignatureSpan">node-notifier.Growl.prototype.</span>notify
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (options, callback) {
+  growly.setHost(this.options.host, this.options.port);
+  options = utils.clone(options || {});
+
+  if (typeof options === &#x27;string&#x27;) {
+    options = { title: &#x27;node-notifier&#x27;, message: options };
+  }
+
+  callback = utils.actionJackerDecorator(this, options, callback, function(
+    data
+  ) {
+    if (data === &#x27;click&#x27;) {
+      return &#x27;click&#x27;;
+    }
+    if (data === &#x27;timedout&#x27;) {
+      return &#x27;timeout&#x27;;
+    }
+    return false;
+  });
+
+  options = utils.mapToGrowl(options);
+
+  if (!options.message) {
+    callback(new Error(&#x27;Message is required.&#x27;));
+    return this;
+  }
+
+  options.title = options.title || &#x27;Node Notification:&#x27;;
+
+  if (hasGrowl || !!options.wait) {
+    var localCallback = options.wait ? callback : noop;
+    growly.notify(options.message, options, localCallback);
+    if (!options.wait) callback();
+    return this;
+  }
+
+  checkGrowl(growly, function(didHaveGrowl) {
+    hasGrowl = didHaveGrowl;
+    if (!didHaveGrowl) return callback(new Error(errorMessageNotFound));
+    growly.notify(options.message, options);
+    callback();
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Quick Usage
+
+Show a native notification on macOS, Windows, Linux:
+
+```javascript
+const notifier = require(&#x27;node-notifier&#x27;);
+// String
+notifier.<span class="apidocCodeKeywordSpan">notify</span>(&#x27;Message&#x27;);
+
+// Object
+notifier.notify({
+  &#x27;title&#x27;: &#x27;My notification&#x27;,
+  &#x27;message&#x27;: &#x27;Hello, there!&#x27;
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.Notification" id="apidoc.module.node-notifier.Notification">module node-notifier.Notification</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Notification.Notification" id="apidoc.element.node-notifier.Notification.Notification">
+        function <span class="apidocSignatureSpan">node-notifier.</span>Notification
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotifySend(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof NotifySend)) {
+    return new NotifySend(options);
+  }
+
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Notification.super_" id="apidoc.element.node-notifier.Notification.super_">
+        function <span class="apidocSignatureSpan">node-notifier.Notification.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.Notification.prototype" id="apidoc.module.node-notifier.Notification.prototype">module node-notifier.Notification.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.Notification.prototype.notify" id="apidoc.element.node-notifier.Notification.prototype.notify">
+        function <span class="apidocSignatureSpan">node-notifier.Notification.prototype.</span>notify
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (options, callback) {
+  options = utils.clone(options || {});
+  callback = callback || noop;
+
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new TypeError(
+      &#x27;The second argument must be a function callback. You have passed &#x27; +
+        typeof callback
+    );
+  }
+
+  if (typeof options === &#x27;string&#x27;) {
+    options = { title: &#x27;node-notifier&#x27;, message: options };
+  }
+
+  if (!options.message) {
+    callback(new Error(&#x27;Message is required.&#x27;));
+    return this;
+  }
+
+  if (os.type() !== &#x27;Linux&#x27; &#x26;&#x26; !os.type().match(/BSD$/)) {
+    callback(new Error(&#x27;Only supported on Linux and *BSD systems&#x27;));
+    return this;
+  }
+
+  if (hasNotifier === false) {
+    callback(new Error(&#x27;notify-send must be installed on the system.&#x27;));
+    return this;
+  }
+
+  if (hasNotifier || !!this.options.suppressOsdCheck) {
+    doNotification(options, callback);
+    return this;
+  }
+
+  try {
+    hasNotifier = !!which.sync(notifier);
+    doNotification(options, callback);
+  } catch (err) {
+    hasNotifier = false;
+    return callback(err);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Quick Usage
+
+Show a native notification on macOS, Windows, Linux:
+
+```javascript
+const notifier = require(&#x27;node-notifier&#x27;);
+// String
+notifier.<span class="apidocCodeKeywordSpan">notify</span>(&#x27;Message&#x27;);
+
+// Object
+notifier.notify({
+  &#x27;title&#x27;: &#x27;My notification&#x27;,
+  &#x27;message&#x27;: &#x27;Hello, there!&#x27;
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.NotificationCenter" id="apidoc.module.node-notifier.NotificationCenter">module node-notifier.NotificationCenter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.NotificationCenter.NotificationCenter" id="apidoc.element.node-notifier.NotificationCenter.NotificationCenter">
+        function <span class="apidocSignatureSpan">node-notifier.</span>NotificationCenter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotificationCenter(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof NotificationCenter)) {
+    return new NotificationCenter(options);
+  }
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Or if you are using several (or you are lazy):
+(note: technically, this takes longer to require)
+
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.<span class="apidocCodeKeywordSpan">NotificationCenter</span>(options).notify();
+new nn.NotifySend(options).notify();
+new nn.WindowsToaster(options).notify(options);
+new nn.WindowsBalloon(options).notify(options);
+new nn.Growl(options).notify(options);
+```
+
+## Contents
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.NotificationCenter.super_" id="apidoc.element.node-notifier.NotificationCenter.super_">
+        function <span class="apidocSignatureSpan">node-notifier.NotificationCenter.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.NotificationCenter.prototype" id="apidoc.module.node-notifier.NotificationCenter.prototype">module node-notifier.NotificationCenter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.NotificationCenter.prototype.notify" id="apidoc.element.node-notifier.NotificationCenter.prototype.notify">
+        function <span class="apidocSignatureSpan">node-notifier.NotificationCenter.prototype.</span>notify
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (options, callback) {
+  var fallbackNotifier;
+  var id = identificator();
+  options = utils.clone(options || {});
+  activeId = id;
+
+  if (typeof options === &#x27;string&#x27;) {
+    options = { title: &#x27;node-notifier&#x27;, message: options };
+  }
+  var timeout;
+
+  callback = callback || noop;
+
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new TypeError(
+      &#x27;The second argument must be a function callback. You have passed &#x27; +
+        typeof fn
+    );
+  }
+
+  var actionJackedCallback = utils.actionJackerDecorator(
+    this,
+    options,
+    function() {
+      clearTimeout(timeout);
+      callback.apply(null, arguments);
+    },
+    function(data) {
+      if (activeId !== id) return false;
+
+      if (data === &#x27;activate&#x27;) {
+        return &#x27;click&#x27;;
+      }
+      if (data === &#x27;timeout&#x27;) {
+        return &#x27;timeout&#x27;;
+      }
+      if (data === &#x27;replied&#x27;) {
+        return &#x27;replied&#x27;;
+      }
+      return false;
+    }
+  );
+
+  options = utils.mapToMac(options);
+
+  if (!options.message &#x26;&#x26; !options.group &#x26;&#x26; !options.list &#x26;&#x26; !options.remove) {
+    callback(new Error(&#x27;Message, group, remove or list property is required.&#x27;));
+    return this;
+  }
+
+  var argsList = utils.constructArgumentList(options);
+  if (utils.isMountainLion()) {
+    var cp = utils.fileCommandJson(
+      this.options.customPath || notifier,
+      argsList,
+      actionJackedCallback
+    );
+    // Redundancy fallback to prevent memory leak
+    timeout = setTimeout(
+      function() {
+        cp.kill(&#x27;SIGTERM&#x27;);
+      },
+      FAILSAFE_TIMEOUT
+    );
+
+    return this;
+  }
+
+  if (fallbackNotifier || !!this.options.withFallback) {
+    fallbackNotifier = fallbackNotifier || new Growl(this.options);
+    return fallbackNotifier.notify(options, callback);
+  }
+
+  callback(new Error(errorMessageOsX));
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Quick Usage
+
+Show a native notification on macOS, Windows, Linux:
+
+```javascript
+const notifier = require(&#x27;node-notifier&#x27;);
+// String
+notifier.<span class="apidocCodeKeywordSpan">notify</span>(&#x27;Message&#x27;);
+
+// Object
+notifier.notify({
+  &#x27;title&#x27;: &#x27;My notification&#x27;,
+  &#x27;message&#x27;: &#x27;Hello, there!&#x27;
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.WindowsBalloon" id="apidoc.module.node-notifier.WindowsBalloon">module node-notifier.WindowsBalloon</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsBalloon.WindowsBalloon" id="apidoc.element.node-notifier.WindowsBalloon.WindowsBalloon">
+        function <span class="apidocSignatureSpan">node-notifier.</span>WindowsBalloon
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WindowsBalloon(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof WindowsBalloon)) {
+    return new WindowsBalloon(options);
+  }
+
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.NotificationCenter(options).notify();
+new nn.NotifySend(options).notify();
+new nn.WindowsToaster(options).notify(options);
+new nn.<span class="apidocCodeKeywordSpan">WindowsBalloon</span>(options).notify(options);
+new nn.Growl(options).notify(options);
+```
+
+## Contents
+
+* [Notification Center documentation](#usage-notificationcenter)
+* [Windows Toaster documentation](#usage-windowstoaster)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsBalloon.super_" id="apidoc.element.node-notifier.WindowsBalloon.super_">
+        function <span class="apidocSignatureSpan">node-notifier.WindowsBalloon.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.WindowsBalloon.prototype" id="apidoc.module.node-notifier.WindowsBalloon.prototype">module node-notifier.WindowsBalloon.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsBalloon.prototype.notify" id="apidoc.element.node-notifier.WindowsBalloon.prototype.notify">
+        function <span class="apidocSignatureSpan">node-notifier.WindowsBalloon.prototype.</span>notify
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (options, callback) {
+  var fallback;
+  var notifierOptions = this.options;
+  options = utils.clone(options || {});
+  callback = callback || noop;
+
+  if (typeof options === &#x27;string&#x27;) {
+    options = { title: &#x27;node-notifier&#x27;, message: options };
+  }
+
+  var actionJackedCallback = utils.actionJackerDecorator(
+    this,
+    options,
+    callback,
+    function(data) {
+      if (data === &#x27;activate&#x27;) {
+        return &#x27;click&#x27;;
+      }
+      if (data === &#x27;timeout&#x27;) {
+        return &#x27;timeout&#x27;;
+      }
+      return false;
+    }
+  );
+
+  if (!!this.options.withFallback &#x26;&#x26; utils.isWin8()) {
+    fallback = fallback || new Toaster(notifierOptions);
+    return fallback.notify(options, callback);
+  }
+
+  if (
+    !!this.options.withFallback &#x26;&#x26;
+      (!utils.isLessThanWin8() || hasGrowl === true)
+  ) {
+    fallback = fallback || new Growl(notifierOptions);
+    return fallback.notify(options, callback);
+  }
+
+  if (!this.options.withFallback || hasGrowl === false) {
+    doNotification(options, notifierOptions, actionJackedCallback);
+    return this;
+  }
+
+  checkGrowl(notifierOptions, function(hasGrowlResult) {
+    hasGrowl = hasGrowlResult;
+
+    if (hasGrowl) {
+      fallback = fallback || new Growl(notifierOptions);
+      return fallback.notify(options, callback);
+    }
+
+    doNotification(options, notifierOptions, actionJackedCallback);
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Quick Usage
+
+Show a native notification on macOS, Windows, Linux:
+
+```javascript
+const notifier = require(&#x27;node-notifier&#x27;);
+// String
+notifier.<span class="apidocCodeKeywordSpan">notify</span>(&#x27;Message&#x27;);
+
+// Object
+notifier.notify({
+  &#x27;title&#x27;: &#x27;My notification&#x27;,
+  &#x27;message&#x27;: &#x27;Hello, there!&#x27;
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.WindowsToaster" id="apidoc.module.node-notifier.WindowsToaster">module node-notifier.WindowsToaster</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsToaster.WindowsToaster" id="apidoc.element.node-notifier.WindowsToaster.WindowsToaster">
+        function <span class="apidocSignatureSpan">node-notifier.</span>WindowsToaster
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WindowsToaster(options) {
+  options = utils.clone(options || {});
+  if (!(this instanceof WindowsToaster)) {
+    return new WindowsToaster(options);
+  }
+
+  this.options = options;
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+(note: technically, this takes longer to require)
+
+```javascript
+const nn = require(&#x27;node-notifier&#x27;);
+
+new nn.NotificationCenter(options).notify();
+new nn.NotifySend(options).notify();
+new nn.<span class="apidocCodeKeywordSpan">WindowsToaster</span>(options).notify(options);
+new nn.WindowsBalloon(options).notify(options);
+new nn.Growl(options).notify(options);
+```
+
+## Contents
+
+* [Notification Center documentation](#usage-notificationcenter)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsToaster.super_" id="apidoc.element.node-notifier.WindowsToaster.super_">
+        function <span class="apidocSignatureSpan">node-notifier.WindowsToaster.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.WindowsToaster.prototype" id="apidoc.module.node-notifier.WindowsToaster.prototype">module node-notifier.WindowsToaster.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.WindowsToaster.prototype.notify" id="apidoc.element.node-notifier.WindowsToaster.prototype.notify">
+        function <span class="apidocSignatureSpan">node-notifier.WindowsToaster.prototype.</span>notify
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (options, callback) {
+  options = utils.clone(options || {});
+  callback = callback || noop;
+
+  if (typeof options === &#x27;string&#x27;) {
+    options = { title: &#x27;node-notifier&#x27;, message: options };
+  }
+
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw new TypeError(
+      &#x27;The second argument must be a function callback. You have passed &#x27; +
+        typeof fn
+    );
+  }
+
+  var actionJackedCallback = utils.actionJackerDecorator(
+    this,
+    options,
+    function cb(err, data) {
+      // Needs to filter out timeout. Not an actual error.
+      if (err &#x26;&#x26; hasText(data, timeoutMessage)) {
+        return callback(null, data);
+      }
+      callback(err, data);
+    },
+    function mapper(data) {
+      if (hasText(data, successMessage)) {
+        return &#x27;click&#x27;;
+      }
+      if (hasText(data, timeoutMessage)) {
+        return &#x27;timeout&#x27;;
+      }
+      return false;
+    }
+  );
+
+  options.title = options.title || &#x27;Node Notification:&#x27;;
+  if (
+    typeof options.message === &#x27;undefined&#x27; &#x26;&#x26;
+      typeof options.close === &#x27;undefined&#x27;
+  ) {
+    callback(new Error(&#x27;Message or ID to close is required.&#x27;));
+    return this;
+  }
+
+  if (!utils.isWin8() &#x26;&#x26; !!this.options.withFallback) {
+    fallback = fallback || new Balloon(this.options);
+    return fallback.notify(options, callback);
+  }
+
+  options = utils.mapToWin8(options);
+  var argsList = utils.constructArgumentList(options, {
+    explicitTrue: true,
+    wrapper: &#x27;&#x27;,
+    keepNewlines: true,
+    noEscape: true
+  });
+  utils.fileCommand(
+    this.options.customPath || notifier,
+    argsList,
+    actionJackedCallback
+  );
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Quick Usage
+
+Show a native notification on macOS, Windows, Linux:
+
+```javascript
+const notifier = require(&#x27;node-notifier&#x27;);
+// String
+notifier.<span class="apidocCodeKeywordSpan">notify</span>(&#x27;Message&#x27;);
+
+// Object
+notifier.notify({
+  &#x27;title&#x27;: &#x27;My notification&#x27;,
+  &#x27;message&#x27;: &#x27;Hello, there!&#x27;
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-notifier.utils" id="apidoc.module.node-notifier.utils">module node-notifier.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.actionJackerDecorator" id="apidoc.element.node-notifier.utils.actionJackerDecorator">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>actionJackerDecorator
+        <span class="apidocSignatureSpan">(emitter, options, fn, mapper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">actionJackerDecorator = function (emitter, options, fn, mapper) {
+  options = clone(options);
+  fn = fn || noop;
+
+  if (typeof fn !== &#x27;function&#x27;) {
+    throw new TypeError(
+      &#x27;The second argument must be a function callback. You have passed &#x27; +
+        typeof fn
+    );
+  }
+
+  return function(err, data) {
+    var resultantData = data;
+    var metadata = {};
+    // Allow for extra data if resultantData is an object
+    if (resultantData &#x26;&#x26; typeof resultantData === &#x27;object&#x27;) {
+      metadata = resultantData;
+      resultantData = resultantData.activationType;
+    }
+
+    // Sanitize the data
+    if (resultantData) {
+      resultantData = resultantData.toLowerCase().trim();
+      if (resultantData.match(/^activate|clicked$/)) {
+        resultantData = &#x27;activate&#x27;;
+      }
+    }
+
+    fn.apply(emitter, [err, resultantData, metadata]);
+    if (!mapper || !resultantData) return;
+
+    var key = mapper(resultantData);
+    if (!key) return;
+    emitter.emit(key, emitter, options, metadata);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.clone" id="apidoc.element.node-notifier.utils.clone">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>clone
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clone(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.command" id="apidoc.element.node-notifier.utils.command">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>command
+        <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">command = function (notifier, options, cb) {
+  notifier = shellwords.escape(notifier);
+  if (process.env.DEBUG) {
+    console.info(&#x27;node-notifier debug info (command):&#x27;);
+    console.info(&#x27;[notifier path]&#x27;, notifier);
+    console.info(&#x27;[notifier options]&#x27;, options.join(&#x27; &#x27;));
+  }
+
+  return cp.exec(
+    notifier + &#x27; &#x27; + options.join(&#x27; &#x27;),
+    function(error, stdout, stderr) {
+      if (error) return cb(error);
+      cb(stderr, stdout);
+    }
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.constructArgumentList" id="apidoc.element.node-notifier.utils.constructArgumentList">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>constructArgumentList
+        <span class="apidocSignatureSpan">(options, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructArgumentList = function (options, extra) {
+  var args = [];
+  extra = extra || {};
+
+  // Massive ugly setup. Default args
+  var initial = extra.initial || [];
+  var keyExtra = extra.keyExtra || &#x27;&#x27;;
+  var allowedArguments = extra.allowedArguments || [];
+  var noEscape = extra.noEscape !== void 0;
+  var checkForAllowed = extra.allowedArguments !== void 0;
+  var explicitTrue = !!extra.explicitTrue;
+  var keepNewlines = !!extra.keepNewlines;
+  var wrapper = extra.wrapper === void 0 ? &#x27;&#x22;&#x27; : extra.wrapper;
+
+  var escapeFn = function(arg) {
+    if (isArray(arg)) {
+      return removeNewLines(arg.join(&#x27;,&#x27;));
+    }
+
+    if (!noEscape) {
+      arg = escapeQuotes(arg);
+    }
+    if (typeof arg === &#x27;string&#x27; &#x26;&#x26; !keepNewlines) {
+      arg = removeNewLines(arg);
+    }
+    return wrapper + arg + wrapper;
+  };
+
+  initial.forEach(function(val) {
+    args.push(escapeFn(val));
+  });
+  for (var key in options) {
+    if (
+      options.hasOwnProperty(key) &#x26;&#x26;
+      (!checkForAllowed || inArray(allowedArguments, key))
+    ) {
+      if (explicitTrue &#x26;&#x26; options[key] === true) {
+        args.push(&#x27;-&#x27; + keyExtra + key);
+      } else if (explicitTrue &#x26;&#x26; options[key] === false) continue;
+      else args.push(&#x27;-&#x27; + keyExtra + key, escapeFn(options[key]));
+    }
+  }
+  return args;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.fileCommand" id="apidoc.element.node-notifier.utils.fileCommand">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>fileCommand
+        <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileCommand = function (notifier, options, cb) {
+  if (process.env.DEBUG) {
+    console.info(&#x27;node-notifier debug info (fileCommand):&#x27;);
+    console.info(&#x27;[notifier path]&#x27;, notifier);
+    console.info(&#x27;[notifier options]&#x27;, options.join(&#x27; &#x27;));
+  }
+
+  return cp.execFile(notifier, options, function(error, stdout, stderr) {
+    if (error) return cb(error, stdout);
+    cb(stderr, stdout);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.fileCommandJson" id="apidoc.element.node-notifier.utils.fileCommandJson">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>fileCommandJson
+        <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileCommandJson = function (notifier, options, cb) {
+  if (process.env.DEBUG) {
+    console.info(&#x27;node-notifier debug info (fileCommandJson):&#x27;);
+    console.info(&#x27;[notifier path]&#x27;, notifier);
+    console.info(&#x27;[notifier options]&#x27;, options.join(&#x27; &#x27;));
+  }
+  return cp.execFile(notifier, options, function(error, stdout, stderr) {
+    if (error) return cb(error, stdout);
+    if (!stdout) return cb(error, {});
+
+    try {
+      var data = JSON.parse(stdout);
+      cb(stderr, data);
+    } catch (e) {
+      cb(e, stdout);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.immediateFileCommand" id="apidoc.element.node-notifier.utils.immediateFileCommand">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>immediateFileCommand
+        <span class="apidocSignatureSpan">(notifier, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">immediateFileCommand = function (notifier, options, cb) {
+  if (process.env.DEBUG) {
+    console.info(&#x27;node-notifier debug info (notifier):&#x27;);
+    console.info(&#x27;[notifier path]&#x27;, notifier);
+  }
+
+  notifierExists(notifier, function(exists) {
+    if (!exists) {
+      return cb(new Error(&#x27;Notifier (&#x27; + notifier + &#x27;) not found on system.&#x27;));
+    }
+    cp.execFile(notifier, options);
+    cb();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.isLessThanWin8" id="apidoc.element.node-notifier.utils.isLessThanWin8">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>isLessThanWin8
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isLessThanWin8 = function () {
+  return os.type() === &#x27;Windows_NT&#x27; &#x26;&#x26;
+    semver.satisfies(garanteeSemverFormat(os.release()), &#x27;&#x3c;6.2.9200&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  module.exports.Notification = NotifySend;
+  break;
+case &#x27;Darwin&#x27;:
+  module.exports = new NotificationCenter(options);
+  module.exports.Notification = NotificationCenter;
+  break;
+case &#x27;Windows_NT&#x27;:
+  if (utils.<span class="apidocCodeKeywordSpan">isLessThanWin8</span>()) {
+    module.exports = new WindowsBalloon(options);
+    module.exports.Notification = WindowsBalloon;
+  } else {
+    module.exports = new WindowsToaster(options);
+    module.exports.Notification = WindowsToaster;
+  }
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.isMac" id="apidoc.element.node-notifier.utils.isMac">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>isMac
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isMac = function () {
+  return os.type() === &#x27;Darwin&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.isMountainLion" id="apidoc.element.node-notifier.utils.isMountainLion">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>isMountainLion
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isMountainLion = function () {
+  return os.type() === &#x27;Darwin&#x27; &#x26;&#x26;
+    semver.satisfies(garanteeSemverFormat(os.release()), &#x27;&#x3e;=12.0.0&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.isWin8" id="apidoc.element.node-notifier.utils.isWin8">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>isWin8
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isWin8 = function () {
+  return os.type() === &#x27;Windows_NT&#x27; &#x26;&#x26;
+    semver.satisfies(garanteeSemverFormat(os.release()), &#x27;&#x3e;=6.2.9200&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.mapToGrowl" id="apidoc.element.node-notifier.utils.mapToGrowl">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToGrowl
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapToGrowl = function (options) {
+  options = mapAppIcon(options);
+  options = mapIconShorthand(options);
+  options = mapText(options);
+
+  if (options.icon &#x26;&#x26; !Buffer.isBuffer(options.icon)) {
+    try {
+      options.icon = fs.readFileSync(options.icon);
+    } catch (ex) {}
+  }
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.mapToMac" id="apidoc.element.node-notifier.utils.mapToMac">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToMac
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapToMac = function (options) {
+  options = mapIconShorthand(options);
+  options = mapText(options);
+
+  if (options.icon) {
+    options.appIcon = options.icon;
+    delete options.icon;
+  }
+
+  if (options.sound === true) {
+    options.sound = &#x27;Bottle&#x27;;
+  }
+
+  if (options.sound === false) {
+    delete options.sound;
+  }
+
+  if (options.sound &#x26;&#x26; options.sound.indexOf(&#x27;Notification.&#x27;) === 0) {
+    options.sound = &#x27;Bottle&#x27;;
+  }
+
+  if (options.wait === true) {
+    if (!options.timeout) {
+      options.timeout = 5;
+    }
+    delete options.wait;
+  }
+
+  options.json = true;
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.mapToNotifu" id="apidoc.element.node-notifier.utils.mapToNotifu">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToNotifu
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapToNotifu = function (options) {
+  options = mapAppIcon(options);
+  options = mapText(options);
+
+  if (options.icon) {
+    options.i = options.icon;
+    delete options.icon;
+  }
+
+  if (options.message) {
+    options.m = options.message;
+    delete options.message;
+  }
+
+  if (options.title) {
+    options.p = options.title;
+    delete options.title;
+  }
+
+  if (options.time) {
+    options.d = options.time;
+    delete options.time;
+  }
+
+  if (options.q !== false) {
+    options.q = true;
+  } else {
+    delete options.q;
+  }
+
+  if (options.quiet === false) {
+    delete options.q;
+    delete options.quiet;
+  }
+
+  if (options.sound) {
+    delete options.q;
+    delete options.sound;
+  }
+
+  if (options.t) {
+    options.d = options.t;
+    delete options.t;
+  }
+
+  if (options.type) {
+    options.t = sanitizeNotifuTypeArgument(options.type);
+    delete options.type;
+  }
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.mapToNotifySend" id="apidoc.element.node-notifier.utils.mapToNotifySend">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToNotifySend
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapToNotifySend = function (options) {
+  options = mapAppIcon(options);
+  options = mapText(options);
+
+  for (var key in options) {
+    if (key === &#x27;message&#x27; || key === &#x27;title&#x27;) continue;
+    if (options.hasOwnProperty(key) &#x26;&#x26; notifySendFlags[key] !== key) {
+      options[notifySendFlags[key]] = options[key];
+      delete options[key];
+    }
+  }
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-notifier.utils.mapToWin8" id="apidoc.element.node-notifier.utils.mapToWin8">
+        function <span class="apidocSignatureSpan">node-notifier.utils.</span>mapToWin8
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapToWin8 = function (options) {
+  options = mapAppIcon(options);
+  options = mapText(options);
+
+  if (options.icon) {
+    if (/^file:\/+/.test(options.icon)) {
+      // should parse file protocol URL to path
+      options.p = url
+        .parse(options.icon)
+        .pathname.replace(/^\/(\w:\/)/, &#x27;$1&#x27;)
+        .replace(/\//g, &#x27;\\&#x27;);
+    } else {
+      options.p = options.icon;
+    }
+    delete options.icon;
+  }
+
+  if (options.message) {
+    // Remove escape char to debug &#x22;HRESULT : 0xC00CE508&#x22; exception
+    options.m = options.message.replace(/\x1b/g, &#x27;&#x27;);
+    delete options.message;
+  }
+
+  if (options.title) {
+    options.t = options.title;
+    delete options.title;
+  }
+
+  if (options.appName) {
+    options.appID = options.appName;
+    delete options.appName;
+  } else {
+    options.appID = &#x27; &#x27;;
+  }
+
+  if (typeof options.appID === &#x27;undefined&#x27;) {
+    options.appID = &#x27; &#x27;;
+  }
+
+  if (typeof options.remove !== &#x27;undefined&#x27;) {
+    options.close = options.remove;
+    delete options.remove;
+  }
+
+  if (options.quiet || options.silent) {
+    options.silent = options.quiet || options.silent;
+    delete options.quiet;
+  }
+
+  if (typeof options.sound !== &#x27;undefined&#x27;) {
+    options.s = options.sound;
+    delete options.sound;
+  }
+
+  if (options.s === false) {
+    options.silent = true;
+    delete options.s;
+  }
+
+  // Silent takes precedence. Remove sound.
+  if (options.s &#x26;&#x26; options.silent) {
+    delete options.s;
+  }
+
+  if (options.s === true) {
+    options.s = toasterDefaultSound;
+  }
+
+  if (options.s &#x26;&#x26; options.s.indexOf(toasterSoundPrefix) !== 0) {
+    options.s = toasterDefaultSound;
+  }
+
+  if (options.wait) {
+    options.w = options.wait;
+    delete options.wait;
+  }
+
+  for (var key in options) {
+    // Check if is allowed. If not, delete!
+    if (
+      options.hasOwnProperty(key) &#x26;&#x26; allowedToasterFlags.indexOf(key) === -1
+    ) {
+      delete options[key];
+    }
+  }
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
